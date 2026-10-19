@@ -1,9 +1,7 @@
 //! Shared types and identity primitives.
 
-use serde::{Deserialize, Serialize};
-
 /// Stable crate metadata for the CODEX VERDANT scaffold.
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ComponentInfo {
     pub name: &'static str,
     pub version: &'static str,
