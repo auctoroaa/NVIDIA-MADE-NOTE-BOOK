@@ -21,7 +21,11 @@ fn main() {
             "- {} v{} [{}]",
             component.name,
             component.version,
-            if component.implemented { "implemented" } else { "scaffold only" }
+            if component.implemented {
+                "implemented"
+            } else {
+                "scaffold only"
+            }
         );
     }
 }
