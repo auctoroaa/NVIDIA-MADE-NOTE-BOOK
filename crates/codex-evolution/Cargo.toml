@@ -1,0 +1,10 @@
+[package]
+name = "codex-evolution"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Evaluation and iteration workflow primitives."
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
