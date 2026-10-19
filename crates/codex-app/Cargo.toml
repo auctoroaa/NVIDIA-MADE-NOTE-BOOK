@@ -1,0 +1,18 @@
+[package]
+name = "codex-app"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "CODEX VERDANT command-line entry point"
+
+[dependencies]
+codex-core = { path = "../codex-core" }
+codex-ingestion = { path = "../codex-ingestion" }
+codex-embedding = { path = "../codex-embedding" }
+codex-storage = { path = "../codex-storage" }
+codex-evolution = { path = "../codex-evolution" }
+codex-governance = { path = "../codex-governance" }
+codex-gpu = { path = "../codex-gpu" }
+codex-vector = { path = "../codex-vector" }
+codex-api = { path = "../codex-api" }
+serde_json.workspace = true
