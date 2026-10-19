@@ -1,0 +1,10 @@
+[package]
+name = "codex-gpu"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Compute backend capability reporting."
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
