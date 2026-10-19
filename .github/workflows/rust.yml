@@ -23,3 +23,13 @@ jobs:
         run: cargo check --workspace
       - name: Run tests
         run: cargo test --workspace
+      - name: CLI smoke test
+        shell: bash
+        run: |
+          output="$(cargo run -q -p codex-app)"
+          printf '%s\n' "$output"
+          grep -Fq "CODEX VERDANT v1.1.0" <<< "$output"
+          grep -Fq "AXIOM-000: Do not prematurely destroy potentially useful information." <<< "$output"
+          for component in codex-core codex-ingestion codex-embedding codex-storage codex-evolution codex-governance codex-gpu codex-vector codex-api; do
+            grep -Fq -- "- $component v1.1.0 [scaffold only]" <<< "$output"
+          done
