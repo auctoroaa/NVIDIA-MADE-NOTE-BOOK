@@ -1,8 +1,6 @@
 //! Vector-search interfaces.
 
-use serde::{Deserialize, Serialize};
-
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ComponentInfo {
     pub name: &'static str,
     pub version: &'static str,
