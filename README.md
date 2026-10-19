@@ -1,33 +1,35 @@
-# NVIDIA Made Notebook
+# CODEX VERDANT v1.1
 
-A minimal Jupyter workspace for testing NVIDIA-hosted language models through the NVIDIA API Catalog's OpenAI-compatible endpoint.
+**AXIOM-000:** Do not prematurely destroy potentially useful information.
 
-## Quick start
+Experimental modular Rust workspace for a local-first knowledge and model experimentation system.
 
-1. Create and activate a Python virtual environment.
-2. Install dependencies:
+## Workspace
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+- `codex-core`: shared types and identity primitives
+- `codex-ingestion`: ingestion interfaces
+- `codex-embedding`: embedding interfaces
+- `codex-storage`: persistence interfaces
+- `codex-evolution`: evaluation and iteration interfaces
+- `codex-governance`: policy and invariant checks
+- `codex-gpu`: compute backend capability reporting
+- `codex-vector`: vector-search interfaces
+- `codex-api`: API-facing types
+- `codex-app`: CLI entry point
 
-3. Copy `.env.example` to `.env` and add your NVIDIA API key and model identifier.
-4. Start Jupyter:
+## Build
 
-   ```bash
-   jupyter notebook
-   ```
+Install stable Rust, then run:
 
-5. Open `notebooks/01_nvidia_api_smoke_test.ipynb` and run the cells from top to bottom.
+```bash
+cargo fmt --all -- --check
+cargo check --workspace
+cargo test --workspace
+cargo run -p codex-app
+```
 
-## Configuration
+## Honest status
 
-- `NVIDIA_API_KEY`: API key from NVIDIA API Catalog.
-- `NVIDIA_MODEL`: exact model identifier shown by NVIDIA for the model you want to test.
-- `NVIDIA_BASE_URL`: defaults to `https://integrate.api.nvidia.com/v1`.
+This is a **scaffold**, not a finished AI platform. GPU kernels, vector indexing, document parsers, model inference, persistent storage backends, Tauri desktop shell, and Svelte UI are not implemented yet. Crate names define intended boundaries, not completed capabilities.
 
-Keep secrets in `.env`. Do not commit real API keys.
-
-## Notes
-
-This is a starter workspace, not a model-training pipeline. Model availability, context limits, and supported request parameters depend on the selected NVIDIA endpoint.
+Never commit API keys or private datasets.
