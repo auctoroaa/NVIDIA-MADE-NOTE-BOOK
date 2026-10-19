@@ -8,5 +8,9 @@ pub struct ComponentInfo {
 }
 
 pub fn component_info() -> ComponentInfo {
-    ComponentInfo { name: "codex-api", version: env!("CARGO_PKG_VERSION"), implemented: false }
+    ComponentInfo {
+        name: "codex-api",
+        version: env!("CARGO_PKG_VERSION"),
+        implemented: false,
+    }
 }
