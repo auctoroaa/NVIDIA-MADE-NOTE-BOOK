@@ -1,0 +1,10 @@
+[package]
+name = "codex-ingestion"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Interfaces for importing documents and other source material."
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
