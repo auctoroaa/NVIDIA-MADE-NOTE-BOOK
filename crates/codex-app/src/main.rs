@@ -16,12 +16,14 @@ fn main() {
         codex_api::component_info(),
     ];
 
-    for component in components {
+    for component in components.map(|component| {
+        (component.name, component.version, component.implemented)
+    }) {
         println!(
             "- {} v{} [{}]",
-            component.name,
-            component.version,
-            if component.implemented {
+            component.0,
+            component.1,
+            if component.2 {
                 "implemented"
             } else {
                 "scaffold only"
