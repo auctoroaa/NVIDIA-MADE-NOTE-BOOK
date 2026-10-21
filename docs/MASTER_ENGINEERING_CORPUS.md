@@ -259,3 +259,16 @@ No build or test command was executed as part of creating this map.
 ---
 
 **Corpus invariant:** names are not implementations; specifications are not test results; a tested primitive is not a complete engine; conceptual relationships are not code dependencies.
+
+
+### E-013. Engineering Execution Loop / Execution Leverage
+
+- **Origin:** `docs/EXECUTION_LEVERAGE_PLAN.md`, derived from recurring project workflow friction described in conversation.
+- **Status:** `PROPOSED`; diagnosis is qualitative and has not yet been validated against measured task data.
+- **Core hypothesis:** the dominant bottleneck is execution leverage: excessive coordination/context-transfer/supervision relative to work completed and verified end to end.
+- **Intended role:** reduce the distance between a task request and a traceable, tested result by connecting repository inspection, bounded planning, authorized execution, verification, and MK Core preservation.
+- **Minimum vertical slice:** one task from request to repository inspection, scoped change, relevant checks, acceptance verification, and durable result record.
+- **Boundary:** this is not a claim that GODMODE already has an autonomous coding loop. Agent count, tool-call count, and generated code volume are not success measures.
+- **Verification metrics:** request-to-verified-result time, manual interventions, first-pass verification rate, repeated context questions, tool failures, unverified completion claims, and successful resumption from stored records.
+- **Next verification:** inspect GODMODE's current execution path; select one narrow task; run it end to end; record commit, check outputs, failures, and manual interventions.
+- **Specification:** [Engineering Execution Bottleneck and Leverage Plan](EXECUTION_LEVERAGE_PLAN.md).
