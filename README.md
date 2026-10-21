@@ -7,6 +7,7 @@ Experimental modular Rust workspace for a local-first knowledge and model experi
 ## Engineering corpus
 
 - [Master Engineering Corpus](docs/MASTER_ENGINEERING_CORPUS.md): engine map, reusable component registry, provenance/status definitions, and verification ledger.
+- [Knowledge Harvest: Persistent Intelligence Infrastructure](docs/KNOWLEDGE_HARVEST_PII.md): concepts, formulas, cognition/governance frameworks, hardware-memory patterns, reusable specifications, open questions, and verification queue.
 
 ## Workspace
 
