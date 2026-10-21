@@ -4,6 +4,10 @@
 
 Experimental modular Rust workspace for a local-first knowledge and model experimentation system.
 
+## Engineering corpus
+
+- [Master Engineering Corpus](docs/MASTER_ENGINEERING_CORPUS.md): engine map, reusable component registry, provenance/status definitions, and verification ledger.
+
 ## Workspace
 
 - `codex-core`: shared types and identity primitives
