@@ -1,0 +1,165 @@
+{
+  "record_id": "MKC-KH-ULE-2026-10-22-001",
+  "title": "Universal Logic Engine Specification Review",
+  "captured": "2026-10-22",
+  "source": "User-provided critique in MKC ARCHIVE conversation",
+  "classification": "user-supplied proposals and technical claims; not independently verified",
+  "summary": "Ten proposed refinements to a Universal Logic Engine architecture, with USC identified as the highest-priority proposal.",
+  "proposals": [
+    {
+      "id": "P-001",
+      "name": "Universal State Chain (USC)",
+      "formula": "StateID[t+1] = SHA256(StateID[t] || EvidenceBundle[t] || TransitionHash[t])",
+      "intent": "Tamper-evident provenance across state transitions",
+      "status": "proposed",
+      "caveat": "Hash chain does not prove evidence truth; canonicalization, trust anchors, and key management required."
+    },
+    {
+      "id": "P-002",
+      "name": "Expanded transition evidence record",
+      "fields": [
+        [
+          "StateID",
+          32
+        ],
+        [
+          "TransitionHash",
+          32
+        ],
+        [
+          "VerifierSignature",
+          32
+        ],
+        [
+          "Timestamp",
+          8
+        ],
+        [
+          "Sequence",
+          8
+        ]
+      ],
+      "claimed_total_bytes": 112,
+      "status": "proposed",
+      "caveat": "Signature field is underspecified; total assumes fixed-width fields without framing or metadata."
+    },
+    {
+      "id": "P-003",
+      "name": "Speculative Continuation Mode",
+      "mechanism": "Execute provisional predicted state while a missing tile loads, then reconcile through verifier",
+      "status": "proposed",
+      "caveat": "Requires provisional semantics, rollback, dependency tracking, and side-effect isolation."
+    },
+    {
+      "id": "P-004",
+      "name": "Wisdom confidence geometry",
+      "fields": [
+        "Principle",
+        "Limits",
+        "Exceptions",
+        "Consequences",
+        "Confidence",
+        "EvidenceMass",
+        "CrossDomainValidity"
+      ],
+      "status": "proposed",
+      "caveat": "Metrics and calibration undefined."
+    },
+    {
+      "id": "P-005",
+      "name": "Bounded canonical folding",
+      "target_error_probability": "< 1e-9",
+      "method": "Finite verification corpus",
+      "status": "proposed",
+      "caveat": "Finite tests alone do not justify universal error probability; distribution and test design required."
+    },
+    {
+      "id": "P-006",
+      "name": "Transfer-aware learning/forgetting",
+      "metric": "SDL = T - F",
+      "interpretation": {
+        "positive": "learning exceeds forgetting",
+        "zero": "neutral",
+        "negative": "system decay"
+      },
+      "status": "proposed",
+      "caveat": "T and F not operationally defined or normalized."
+    },
+    {
+      "id": "P-007",
+      "name": "Adversarial truth test",
+      "pipeline": [
+        "Observation",
+        "Pattern",
+        "Candidate Principle",
+        "Adversarial Attack",
+        "Wisdom Court",
+        "Wisdom Object"
+      ],
+      "metric": "ContradictionScore",
+      "status": "proposed",
+      "caveat": "Retrieval coverage, scoring, and thresholds undefined; cannot guarantee truth."
+    },
+    {
+      "id": "P-008",
+      "name": "Minimum retained entropy",
+      "trigger": "if H < H_min then decompress or restore attractor",
+      "status": "proposed",
+      "caveat": "Entropy proxy, units, measurement window, and safeguards undefined."
+    },
+    {
+      "id": "P-009",
+      "name": "Statistical policy promotion",
+      "criterion": "utility gain AND safety holds AND p < 0.01",
+      "status": "proposed",
+      "caveat": "Requires endpoint, power, effect size, multiple-testing and sequential-testing protocol."
+    },
+    {
+      "id": "P-010",
+      "name": "Epistemic mortality",
+      "formula": "BeliefStrength[t+1] = BeliefStrength[t] + EvidenceFor - EvidenceAgainst",
+      "threshold": "Archive belief when strength < tau",
+      "status": "proposed",
+      "caveat": "Requires evidence weighting, dependency handling, time decay, and reversible archive semantics."
+    }
+  ],
+  "proposed_component_mapping": {
+    "AXIOM": "Reality",
+    "MIE": "Memory",
+    "EVOLUTION-X": "Exploration",
+    "CGIOF": "Abstraction",
+    "WPA": "Wisdom Formation",
+    "NOESIS": "Governance",
+    "Verifier": "Truth Preservation",
+    "USC": "Identity Across Time"
+  },
+  "established_from_source": [
+    "User requested knowledge harvesting of this critique.",
+    "The critique identifies USC as its highest-priority proposed addition."
+  ],
+  "not_established": [
+    "Implementation status",
+    "Empirical validation",
+    "Formal proof of truth preservation",
+    "Near-zero stalls"
+  ],
+  "open_questions": [
+    "Identify authoritative baseline specification and version.",
+    "Define canonical evidence bundle serialization.",
+    "Choose hash/signature/MAC scheme, key lifecycle, and trusted checkpoints.",
+    "Specify speculative state rollback and reconciliation.",
+    "Define and calibrate wisdom/confidence metrics.",
+    "Define statistical model for canonical-fold error target.",
+    "Operationalize T, F, and SDL.",
+    "Define contradiction and belief-strength thresholds.",
+    "Define retained entropy measure.",
+    "Define statistical promotion protocol and safety criteria.",
+    "Confirm whether MIE, EVOLUTION-X, CGIOF, WPA, NOESIS, USC labels are established project terms."
+  ],
+  "verification_notes": [
+    "Hash-chain integrity is not equivalent to truth.",
+    "A finite corpus does not by itself prove a universal probabilistic error bound.",
+    "p < 0.01 alone does not establish practical value or safety.",
+    "All proposals require explicit adoption, specification, and testing before being described as implemented."
+  ]
+}
