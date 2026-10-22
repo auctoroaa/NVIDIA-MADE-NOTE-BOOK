@@ -1,0 +1,179 @@
+{
+  "record_id": "MKC-KH-FVPN-2026-10-22-001",
+  "title": "FishVPN Project-State Ingestion",
+  "captured": "2026-10-22",
+  "source_label": "MKC-FVPN | 2026-10-22",
+  "source": "User-provided project-state block in conversation",
+  "classification": "User-reported project state and requirements; not independently verified",
+  "project": "FishVPN",
+  "goal": "Real Android WireGuard VPN client",
+  "source_preserved": true,
+  "items": [
+    {
+      "id": "FVPN-FACT-001",
+      "item": "Project goal is a real Android WireGuard VPN client",
+      "classification": "user-provided requirement",
+      "status": "current stated goal"
+    },
+    {
+      "id": "FVPN-STATE-001",
+      "item": "IDE is AndroidIDE",
+      "classification": "user-reported environment",
+      "status": "not independently inspected"
+    },
+    {
+      "id": "FVPN-STATE-002",
+      "item": "Template Compose Activity; language Kotlin; build DSL Kotlin DSL",
+      "classification": "user-provided setup",
+      "status": "reported"
+    },
+    {
+      "id": "FVPN-STATE-003",
+      "item": "Gradle major version 8 chosen; exact version unresolved",
+      "classification": "user-provided setup",
+      "status": "incomplete specification"
+    },
+    {
+      "id": "FVPN-STATE-004",
+      "item": "User reports SDK choices 24–29",
+      "classification": "user-reported environment",
+      "status": "needs clarification and inspection"
+    },
+    {
+      "id": "FVPN-ARCH-001",
+      "item": "Intended VPN backend is WireGuard Android GoBackend",
+      "classification": "architecture choice",
+      "status": "integration unverified"
+    },
+    {
+      "id": "FVPN-STATE-005",
+      "item": "WireGuard server required but not provisioned",
+      "classification": "dependency/project state",
+      "status": "blocking end-to-end VPN operation"
+    },
+    {
+      "id": "FVPN-STATE-006",
+      "item": "Code generated previously",
+      "classification": "project history claim",
+      "status": "generated source not reviewed in this ingest"
+    },
+    {
+      "id": "FVPN-VERIFY-001",
+      "item": "Build and runtime verification absent",
+      "classification": "verification status",
+      "status": "unverified"
+    },
+    {
+      "id": "FVPN-CONFLICT-001",
+      "item": "Build script requests compileSdk 35 while user reports SDK choices 24–29",
+      "classification": "toolchain conflict",
+      "status": "unresolved"
+    },
+    {
+      "id": "FVPN-DECISION-CANDIDATE-001",
+      "item": "com.fishvpn.app",
+      "classification": "assistant-proposed package",
+      "status": "not confirmed by user"
+    },
+    {
+      "id": "FVPN-RULE-001",
+      "item": "Never claim a successful build without evidence",
+      "classification": "explicit user rule",
+      "status": "governing verification rule"
+    }
+  ],
+  "relationships": [
+    {
+      "from": "FVPN-CONFLICT-001",
+      "relation": "blocks",
+      "to": "build verification"
+    },
+    {
+      "from": "FVPN-STATE-005",
+      "relation": "blocks",
+      "to": "end-to-end VPN verification"
+    },
+    {
+      "from": "FVPN-ARCH-001",
+      "relation": "requires integration verification",
+      "to": "WireGuard tunnel operation"
+    },
+    {
+      "from": "FVPN-DECISION-CANDIDATE-001",
+      "relation": "requires confirmation before becoming",
+      "to": "authoritative package identity"
+    }
+  ],
+  "next_actions": [
+    "Inspect actual Gradle wrapper, root/plugin build files, app module build file, manifest, and Kotlin sources.",
+    "Inspect installed JDK, Gradle, AGP, Android SDK platforms, and build tools.",
+    "Resolve a compatible evidence-supported JDK + Gradle + AGP + compileSdk/build-tools tuple.",
+    "Verify GoBackend dependency and API usage against the actual dependency version.",
+    "Confirm or retain unconfirmed status for com.fishvpn.app.",
+    "Build and preserve actual logs for the exact source revision.",
+    "Provision a WireGuard server/configuration and test tunnel behavior before claiming end-to-end functionality."
+  ],
+  "verification_gates": [
+    {
+      "id": "G0",
+      "name": "Source inspected",
+      "status": "not passed"
+    },
+    {
+      "id": "G1",
+      "name": "Toolchain identified",
+      "status": "not passed"
+    },
+    {
+      "id": "G2",
+      "name": "Build verified with logs",
+      "status": "not passed"
+    },
+    {
+      "id": "G3",
+      "name": "Runtime verified on named environment",
+      "status": "not passed"
+    },
+    {
+      "id": "G4",
+      "name": "GoBackend tunnel start/stop verified",
+      "status": "not passed"
+    },
+    {
+      "id": "G5",
+      "name": "End-to-end server and traffic behavior verified",
+      "status": "not passed"
+    }
+  ],
+  "open_questions": [
+    "Which exact JDK version does AndroidIDE use for this project?",
+    "Which Gradle 8.x wrapper version is configured?",
+    "Which AGP version is declared?",
+    "Which SDK platforms and build-tools packages are actually installed?",
+    "Does SDK choices 24–29 refer to Android API levels, AndroidIDE UI options, or another constraint?",
+    "Which WireGuard Android dependency version and API surface are in the generated code?",
+    "Is com.fishvpn.app accepted as the final package/application ID?",
+    "Where will the server be provisioned and who supplies the tunnel configuration?"
+  ],
+  "validation_notes": [
+    "This record preserves user-reported state and does not independently inspect the repository or device.",
+    "No code changes, builds, installs, server provisioning, or VPN tests are claimed.",
+    "Build success, runtime success, and VPN connectivity remain unverified."
+  ],
+  "tags": [
+    "FishVPN",
+    "AndroidIDE",
+    "Kotlin",
+    "Jetpack Compose",
+    "Kotlin DSL",
+    "Gradle 8",
+    "AGP",
+    "compileSdk 35",
+    "Android SDK",
+    "WireGuard",
+    "GoBackend",
+    "toolchain compatibility",
+    "build verification",
+    "runtime verification"
+  ]
+}
