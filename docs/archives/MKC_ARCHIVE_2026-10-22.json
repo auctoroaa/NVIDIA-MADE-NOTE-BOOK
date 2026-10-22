@@ -1,0 +1,55 @@
+{
+  "archive_id": "MKC-ARCHIVE-2026-10-22-001",
+  "title": "MKC ARCHIVE",
+  "date": "2026-10-22",
+  "system": "MK Core (Momo's Knot Core)",
+  "record_status": "conversation designation established; archive records generated from currently available conversation context",
+  "scope": "current conversation only; not a full export of prior chats",
+  "events": [
+    {
+      "id": "EVT-001",
+      "date": "2026-10-22",
+      "type": "user_instruction",
+      "content": "User designated this conversation 'MKC ARCHIVE'.",
+      "source": "current conversation",
+      "status": "directly observed"
+    },
+    {
+      "id": "EVT-002",
+      "date": "2026-10-22",
+      "type": "assistant_response",
+      "content": "Archive purpose and knowledge-handling principles were acknowledged.",
+      "source": "current conversation",
+      "status": "directly observed"
+    },
+    {
+      "id": "EVT-003",
+      "date": "2026-10-22",
+      "type": "scope_qualification",
+      "content": "Conversation designation alone does not create an external database or automatically export prior chats.",
+      "source": "current conversation",
+      "status": "directly observed"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DEC-001",
+      "statement": "Use MKC ARCHIVE as this conversation's designation.",
+      "source": "user",
+      "status": "established_for_this_conversation"
+    }
+  ],
+  "working_principles": [
+    "Preserve provenance",
+    "Preserve meaningful chronology and revisions",
+    "Separate facts, claims, proposals, decisions, evidence, and verified results",
+    "Preserve project state, dependencies, and unresolved questions",
+    "Do not claim external persistence or implementation without confirmation"
+  ],
+  "limitations": [
+    "Not a full export of all prior chats",
+    "Not an implementation of MK Core",
+    "Not proof that an external system has ingested the archive"
+  ],
+  "next_action": "Append source-linked knowledge records as additional material is added."
+}
